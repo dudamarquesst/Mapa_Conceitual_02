@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceitual | Arquitetura Web</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            card: 'rgba(30, 41, 59, 0.7)',
+                            accent: '#38bdf8',
+                            glow: 'rgba(56, 189, 248, 0.5)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col relative overflow-x-hidden">
+    
+    <div class="bg-grid"></div>
+
+    <header class="text-center py-16 px-4 z-10 relative">
+        <span class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-2 block">Unidade 2 • Desenvolvimento Web</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Arquitetura de Protocolos</h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg">Um mapa conceitual interativo. Selecione os cards abaixo para explorar o funcionamento, as diferenças e as aplicações práticas.</p>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4 z-10 relative">
+        <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative">
+            
+            <div class="flex flex-col gap-8">
+                <div class="glass-card rounded-2xl p-6 cursor-pointer" onclick="openModal('dns')">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold text-white">DNS</h2>
+                        <span class="text-2xl">📖</span>
+                    </div>
+                    <p class="text-slate-300 text-sm">O tradutor da internet. Transforma nomes amigáveis em endereços de IP.</p>
+                    <div class="mt-4 text-brand-accent text-sm font-semibold flex items-center gap-1">Explorar <span class="text-lg">→</span></div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 cursor-pointer" onclick="openModal('http')">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold text-white">HTTP/HTTPS</h2>
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <p class="text-slate-300 text-sm">A navegação sem estado. O idioma padrão de comunicação da Web.</p>
+                    <div class="mt-4 text-brand-accent text-sm font-semibold flex items-center gap-1">Explorar <span class="text-lg">→</span></div>
+                </div>
+            </div>
+
+            <div class="flex justify-center relative">
+                <div class="glass-card core-node rounded-2xl p-8 cursor-pointer w-full text-center transform scale-105" onclick="openModal('tcp')">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 text-purple-400 mb-4 text-3xl">📦</div>
+                    <h2 class="text-3xl font-extrabold text-white mb-2">Pilha TCP/IP</h2>
+                    <p class="text-slate-300 text-sm">O modelo de 4 camadas que baseia toda a internet. A fundação de todos os outros protocolos.</p>
+                    <div class="mt-6 text-purple-400 text-sm font-semibold">Desvendar Núcleo</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8">
+                <div class="glass-card rounded-2xl p-6 cursor-pointer" onclick="openModal('ftp')">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold text-white">FTP / SFTP</h2>
+                        <span class="text-2xl">📁</span>
+                    </div>
+                    <p class="text-slate-300 text-sm">Transferência de arquivos em lote e arquitetura Out-of-Band.</p>
+                    <div class="mt-4 text-brand-accent text-sm font-semibold flex items-center gap-1">Explorar <span class="text-lg">→</span></div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 cursor-pointer" onclick="openModal('ws')">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold text-white">WebSockets</h2>
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <p class="text-slate-300 text-sm">A revolução do tempo real. Conexões bidirecionais contínuas.</p>
+                    <div class="mt-4 text-brand-accent text-sm font-semibold flex items-center gap-1">Explorar <span class="text-lg">→</span></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+<footer class="mt-16 py-8 border-t border-slate-800 z-10 bg-slate-900/50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="mb-4 text-slate-400 text-sm">
+            <strong>Integrantes:</strong> Lucas Paes, Maria Eduarda e Miguel Moura
+        </div>
+        
+        <p class="text-xs text-slate-500 leading-relaxed italic">
+            <strong>Declaração de Uso de IA:</strong> Declaramos que este grupo utilizou a ferramenta de inteligência artificial Google Gemini como suporte
+            na estruturação do código (HTML/CSS/JS) e na síntese dos conceitos teóricos apresentados. A IA auxiliou na organização das informações e na sugestão
+            de elementos de UI/UX para o mapa conceitual interativo. Ressaltamos que todo o conteúdo foi revisado, discutido e validado pelos integrantes do grupo,
+            garantindo a compreensão dos protocolos estudados na Unidade 2.
+        </p>
+    </div>
+</footer>
+
+    <div id="modal-overlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-slate-800 border border-slate-700 rounded-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-transform duration-300 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+                ✕
+            </button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
