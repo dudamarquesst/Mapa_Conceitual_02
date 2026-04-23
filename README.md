@@ -3,6 +3,10 @@
 ## Descrição do Projeto
 Este projeto é uma aplicação web interativa desenvolvida para a **Unidade 2 da disciplina de Desenvolvimento Web**. O objetivo é explorar e explicar a arquitetura de protocolos que sustenta a internet moderna, indo desde a resolução de nomes (DNS) até a comunicação em tempo real (WebSockets).
 
+## Link do Mapa
+
+<https://github.com/dudamarquesst/Mapa_Conceitual_02>
+
 ## Tecnologias Utilizadas
 Para este projeto, optamos por uma stack moderna de front-end:
 * **HTML5:** Estruturação semântica dos elementos.
