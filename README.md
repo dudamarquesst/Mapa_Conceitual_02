@@ -5,7 +5,7 @@ Este projeto é uma aplicação web interativa desenvolvida para a **Unidade 2 d
 
 ## Link do Mapa
 
-<https://github.com/dudamarquesst/Mapa_Conceitual_02>
+<https://dudamarquesst.github.io/Mapa_Conceitual_02/>
 
 ## Tecnologias Utilizadas
 Para este projeto, optamos por uma stack moderna de front-end:
