@@ -110,3 +110,27 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+// Simulação de tráfego de dados via WebSocket
+function simulateWebSocket() {
+    const monitor = document.getElementById('ws-monitor');
+    const messages = [
+        "> Conectado ao servidor...",
+        "> Recebendo pacote ID: 204",
+        "> Novo usuário entrou no chat",
+        "> Update: Temperatura 24°C",
+        "> Payload recebido (12kb)",
+        "> Conexão estável (Ping 15ms)",
+        "> Enviando batimento (Keep-alive)"
+    ];
+
+    let i = 0;
+    setInterval(() => {
+        // Adiciona a mensagem e mantém apenas as últimas duas linhas
+        monitor.innerHTML = `> ${messages[i]}<br>> Dados: ${Math.random().toString(36).substring(7)}`;
+        i = (i + 1) % messages.length;
+    }, 3000); // Atualiza a cada 3 segundos
+}
+
+// Inicia a simulação quando a página carrega
+window.onload = simulateWebSocket;
